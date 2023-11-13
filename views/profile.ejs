@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/index.css">
+    <title>Document</title>
+</head>
+<body>
+    <% if (message) { %>
+        <p><%= message %></p>
+      <% } %>
+      <form action="/logout" method="GET">
+        <input type="submit" value="Odjavi se">
+      </form>
+      <form action="/csrf" method="GET">
+        <div hidden>
+            <label for="token">Token:</label>
+            <input type="text" id="token" name="token" value="<%=token%>" readonly >
+        </div>
+        <input type="submit" value="Promjeni lozinku" >
+      </form> 
+      Klikni na "Promjeni lozinku" kako bi isprobao CSRF ranjivost
+</body>
+</html>

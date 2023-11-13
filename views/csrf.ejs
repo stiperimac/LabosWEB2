@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/index.css">
+    <title>Document</title>
+</head>
+<body>
+    <h2>CSRF Ranjivost</h2>
+    <form action="/csrf" method="POST">
+        <text><%=error%></text>
+        <label for="csrfInput1">Unesi novu lozinku:</label>
+        <input type="password" id="csrfInput1" name="newPassword">
+        <label for="csrfInput2">Potvrdi lozinku:</label>
+        <input type="password" id="csrfInput2" name="newPassword2">
+        <label for="disableCSRF">Isključi CSRF ranjivost</label>
+        <input type="checkbox" id="disableCSRF" name="disableCSRF">
+        <button type="submit">Podnesi podatke</button>
+        <% if (token) { %>
+           
+        
+        <div style="display: none;">
+            <label for="token">Token:</label>
+            <input type="text" id="token" name="token" value="<%=token%>" readonly>
+        </div>
+        <% } %>
+    </form>
+    
+</body>
+</html>
