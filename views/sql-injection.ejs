@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/index.css">
+    <title>Document</title>
+</head>
+<body>
+    <h2>SQL Injection Ranjivost</h2>
+    <h3> Ulogirajte se:</h3>
+    <% if (error) { %>
+        <p><%= error %></p>
+      <% } %>
+    <form action="/sql-injection" method="POST">
+        <label for="sqlInput">Korisničko ime:</label>
+        <input type="text" id="sqlInput" name="sqlQuery">
+        <label for="sqlInput">Lozinka:</label>
+        <input type="password" id="pass" name="passName">
+        <label for="useSafeQuery">Koristi sigurni način</label>
+        <input type="checkbox" id="useSafeQuery" name="useSafeQuery">
+        <button type="submit">Podnesi</button>
+    </form>
+    <p>Za SQL injection unesi u username polje : bilo sta ' OR '1' = '1</p>
+</body>
+</html>
